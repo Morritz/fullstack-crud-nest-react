@@ -5,25 +5,29 @@
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-
-import { AppModule } from './app/app.module';
+import passport = require('passport');
 import * as session from 'express-session';
+import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
-  app.use(
-    session({
-      secret: 'secret',
-      resave: false,
-      saveUninitialized: false,
-      cookie: {
-        secure: true,
-        maxAge: 60000,
-      },
-    })
-  );
+
+  // app.use(
+  //   session({
+  //     resave: false,
+  //     saveUninitialized: false,
+  //     secret: 'SecretKey',
+  //     cookie: {
+  //       httpOnly: false,
+  //       maxAge: 60000,
+  //     },
+  //   })
+  // );
+
+  //app.use(passport.session());
+
   const port = process.env.PORT || 3333;
   await app.listen(port);
   Logger.log(

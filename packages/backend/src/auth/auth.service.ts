@@ -6,8 +6,11 @@ export class AuthService {
   constructor(private readonly usersService: UsersService) {}
   authenticateUser(username: string, password: string) {
     const user = this.usersService.findUserByUsername(username);
-    if (!user) return false;
-    if (user.password === password) return true;
-    return false;
+    if (!user) return null;
+    if (user.password === password) {
+      const { password, ...result } = user;
+      return result;
+    }
+    return null;
   }
 }

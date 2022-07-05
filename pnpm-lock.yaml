@@ -39,8 +39,9 @@ specifiers:
   eslint-plugin-jsx-a11y: 6.6.0
   eslint-plugin-react: 7.30.1
   eslint-plugin-react-hooks: 4.6.0
-  express-session: ^1.17.3
+  express-session: ^1.17.2
   jest: 27.5.1
+  nestjs-session: ^2.0.0
   nx: 14.4.1
   passport: ^0.6.0
   passport-local: ^1.0.0
@@ -63,7 +64,7 @@ dependencies:
   '@nestjs/passport': 8.2.2_02481135cc74f3ad74599c5993d40444
   '@nestjs/platform-express': 8.4.7_fce4c3b686c1225eb94686491d30b061
   core-js: 3.23.3
-  express-session: 1.17.3
+  nestjs-session: 2.0.0_d067830f83ee9378416cbbd1290b4a5d
   passport: 0.6.0
   passport-local: 1.0.0
   react: 18.2.0
@@ -108,6 +109,7 @@ devDependencies:
   eslint-plugin-jsx-a11y: 6.6.0_eslint@8.19.0
   eslint-plugin-react: 7.30.1_eslint@8.19.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.19.0
+  express-session: 1.17.3
   jest: 27.5.1_ts-node@10.8.2
   nx: 14.4.1
   prettier: 2.7.1
@@ -4517,7 +4519,7 @@ packages:
   /cookie/0.4.2:
     resolution: {integrity: sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==}
     engines: {node: '>= 0.6'}
-    dev: false
+    dev: true
 
   /cookie/0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
@@ -4595,6 +4597,15 @@ packages:
       path-type: 4.0.0
       yaml: 1.10.2
     dev: true
+
+  /create-nestjs-middleware-module/0.2.2_@nestjs+common@8.4.7:
+    resolution: {integrity: sha512-S9+DdSEQE1dNVIxIoaJ05ZvxaRiRCH0lBguU90/MCASMFXfYDQAY3HE75/iJlH2nM6ARSsVuoVYJp4YehglDEQ==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@nestjs/common': '>=6.0.0'
+    dependencies:
+      '@nestjs/common': 8.4.7_e7ea248743279784063e3708d703abc5
+    dev: false
 
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
@@ -5597,7 +5608,7 @@ packages:
       parseurl: 1.3.3
       safe-buffer: 5.2.1
       uid-safe: 2.1.5
-    dev: false
+    dev: true
 
   /express/4.18.1:
     resolution: {integrity: sha512-zZBcOX9TfehHQhtupq57OF8lFZ3UZi08Y97dwFCkD8p9d/d2Y3M+ykKcwaMDEL+4qyUolgBDX6AblpR3fL212Q==}
@@ -7812,6 +7823,20 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
+  /nestjs-session/2.0.0_d067830f83ee9378416cbbd1290b4a5d:
+    resolution: {integrity: sha512-Li5VbSyRuSZzaIuPGm+m9bmrF7nciZBjZVAi1mP0RrfmL7RcItP7pMfj64JTtUZrPNR+QczcHlnqNFnCjL04wg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@types/express-session': ^1.17.4
+      express-session: ^1.17.2
+    dependencies:
+      '@types/express-session': 1.17.4
+      create-nestjs-middleware-module: 0.2.2_@nestjs+common@8.4.7
+      express-session: 1.17.3
+    transitivePeerDependencies:
+      - '@nestjs/common'
+    dev: false
+
   /node-addon-api/3.2.1:
     resolution: {integrity: sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==}
     dev: true
@@ -8011,6 +8036,7 @@ packages:
   /on-headers/1.0.2:
     resolution: {integrity: sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==}
     engines: {node: '>= 0.8'}
+    dev: true
 
   /once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -8870,7 +8896,7 @@ packages:
   /random-bytes/1.0.0:
     resolution: {integrity: sha512-iv7LhNVO047HzYR3InF6pUcUsPQiHTM1Qal51DcGSuZFBil1aBBWG5eHPNek7bvILMaYJ/8RU1e8w1AMdHmLQQ==}
     engines: {node: '>= 0.8'}
-    dev: false
+    dev: true
 
   /randombytes/2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
@@ -10219,7 +10245,7 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       random-bytes: 1.0.0
-    dev: false
+    dev: true
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

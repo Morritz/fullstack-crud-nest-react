@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 
 interface UserEntity {
   id: number;
@@ -14,9 +14,18 @@ export class UsersService {
       username: 'admin',
       password: 'admin',
     },
+    {
+      id: 2,
+      username: 'user',
+      password: 'user',
+    },
   ];
 
   findUserByUsername(username: string) {
     return this.users.find((user) => user.username === username);
+  }
+
+  findUserById(id: number) {
+    return this.users.find((user) => user.id === id);
   }
 }

@@ -1,13 +1,28 @@
-import { Controller, Get } from '@nestjs/common';
-
-import { AppService } from './app.service';
+import {
+  Controller,
+  Request,
+  Post,
+  UseGuards,
+  Get,
+  HttpCode,
+  Req,
+} from '@nestjs/common';
+import { LogInWithCredentialsGuard } from '../auth/guards/logInWithCredentials.guard';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  @HttpCode(200)
+  @UseGuards(LogInWithCredentialsGuard)
+  @Post('auth/login')
+  login(@Request() req) {
+    console.log(req.isAuthenticated());
+    return req.user;
+  }
 
+  @HttpCode(200)
   @Get()
-  getData() {
-    return this.appService.getData();
+  async authenticate(@Req() request) {
+    console.log(request.user);
+    return request.user;
   }
 }
