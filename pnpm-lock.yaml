@@ -49,6 +49,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-query: ^3.39.1
+  react-query-auth: ^1.1.0
   react-router-dom: 6.3.0
   react-test-renderer: 18.2.0
   reflect-metadata: ^0.1.13
@@ -71,6 +72,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-query: 3.39.1_react-dom@18.2.0+react@18.2.0
+  react-query-auth: 1.1.0_react-query@3.39.1+react@18.2.0
   react-router-dom: 6.3.0_react-dom@18.2.0+react@18.2.0
   reflect-metadata: 0.1.13
   regenerator-runtime: 0.13.7
@@ -8984,6 +8986,17 @@ packages:
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
+
+  /react-query-auth/1.1.0_react-query@3.39.1+react@18.2.0:
+    resolution: {integrity: sha512-YUZ6y7ajU+umpc7Raticrbweq/U/PhBydQ1rphh16RZ6HOuom6pZ/+4x90kbf3/VFalgjbXSDlDXecVPtVmsow==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      react-query: ^3.9.1
+    dependencies:
+      react: 18.2.0
+      react-query: 3.39.1_react-dom@18.2.0+react@18.2.0
+    dev: false
 
   /react-query/3.39.1_react-dom@18.2.0+react@18.2.0:
     resolution: {integrity: sha512-qYKT1bavdDiQZbngWZyPotlBVzcBjDYEJg5RQLBa++5Ix5jjfbEYJmHSZRZD+USVHUSvl/ey9Hu+QfF1QAK80A==}
