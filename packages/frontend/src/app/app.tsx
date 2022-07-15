@@ -1,3 +1,5 @@
+import { Form } from '../components/Form';
+import { InputField } from '../components/InputField';
 import { useAuth } from '../lib/auth';
 
 export function App() {
@@ -7,6 +9,15 @@ export function App() {
     return (
       <div>
         <p>No user!</p>
+        <Form
+          onSubmit={(values) => {
+            const { username, password } = Object.fromEntries(values);
+            login({ username, password }).catch(() => {});
+          }}
+        >
+          <InputField name="username" label="Username" />
+          <InputField name="password" label="Password" />
+        </Form>
       </div>
     );
   else

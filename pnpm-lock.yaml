@@ -30,6 +30,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.29.0
   '@typescript-eslint/parser': ^5.29.0
   autoprefixer: ^10.4.7
+  axios: ^0.27.2
   babel-jest: 27.5.1
   core-js: ^3.6.5
   cypress: ^9.1.0
@@ -68,6 +69,7 @@ dependencies:
   '@nestjs/core': 8.4.7_2aa064eef171d5a7957432d22e4b3f20
   '@nestjs/passport': 8.2.2_02481135cc74f3ad74599c5993d40444
   '@nestjs/platform-express': 8.4.7_fce4c3b686c1225eb94686491d30b061
+  axios: 0.27.2
   core-js: 3.23.3
   nestjs-session: 2.0.0_d067830f83ee9378416cbbd1290b4a5d
   passport: 0.6.0
