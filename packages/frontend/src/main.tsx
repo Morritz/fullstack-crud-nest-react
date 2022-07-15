@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import App from './app/app';
 import { AuthProvider } from './lib/auth';
-
+import './styles.css';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
