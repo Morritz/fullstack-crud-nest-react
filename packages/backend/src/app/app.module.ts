@@ -11,6 +11,7 @@ import { SessionModule } from 'nestjs-session';
       session: {
         resave: false,
         saveUninitialized: false,
+        rolling: true,
         secret: 'SecretKey',
         cookie: {
           httpOnly: false,
