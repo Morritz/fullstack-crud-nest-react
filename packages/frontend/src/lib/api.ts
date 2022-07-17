@@ -22,3 +22,12 @@ export async function loginWithUsernameAndPassword(
     .then((response) => response.data)
     .catch((e) => Promise.reject(e.response.status));
 }
+
+export async function loadUserData(): Promise<UserOrNothing> {
+  return axios
+    .get(`${backendURL}/api`, {
+      withCredentials: true,
+    })
+    .then((response) => response.data)
+    .catch((e) => Promise.reject(e.response.status));
+}

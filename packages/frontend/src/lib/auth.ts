@@ -1,5 +1,9 @@
 import { initReactQueryAuth } from 'react-query-auth';
-import { loginWithUsernameAndPassword, UserOrNothing } from './api';
+import {
+  loadUserData,
+  loginWithUsernameAndPassword,
+  UserOrNothing,
+} from './api';
 
 export type LoginCredentials = {
   username: string;
@@ -7,7 +11,8 @@ export type LoginCredentials = {
 };
 
 async function loadUser() {
-  return null;
+  const user = await loadUserData();
+  return user;
 }
 
 async function loginFn(data: LoginCredentials) {
